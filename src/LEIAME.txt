@@ -1,0 +1,5 @@
+Guilherme Umemura
+9353592
+
+Instruções para rodar o jogo:
+Basta executar o arquivo Pong com o comando: java Pong
