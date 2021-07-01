@@ -29,6 +29,8 @@ public class Ball {
 	private double xDirection;
 	private double yDirection;
 
+	private String lastCollision;
+
 	public Ball(double cx, double cy, double width, double height, Color color, double speed){
 		this.cx = cx;
 		this.cy = cy;
@@ -39,6 +41,8 @@ public class Ball {
 
 		this.xDirection = 1;
 		this.yDirection = 1;
+
+		this.lastCollision = "";
 	}
 
 
@@ -72,7 +76,11 @@ public class Ball {
 
 	public void onPlayerCollision(String playerId){
 		//problema: falta efeito quando bola bate no canto superior/inferior do jogador
-		xDirection *= -1;
+
+		if (lastCollision.equals(playerId)){
+			xDirection *= -1;
+			lastCollision = playerId;
+		}
 	}
 
 	/**
